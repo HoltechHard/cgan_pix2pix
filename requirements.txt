@@ -1,0 +1,3 @@
+tensorflow==2.19
+tensorflowjs==3.18.0
+matplotlib
