@@ -43,7 +43,7 @@ def upsample(filters, size, apply_dropout=False):
   return result
 
 
-# generator  
+# generator ==> encoder + decoder
 def Generator():
   inputs = tf.keras.layers.Input(shape=[256, 256, 3])
 
@@ -95,6 +95,7 @@ def Generator():
   return tf.keras.Model(inputs=inputs, outputs=x)
 
 
+# load input image
 def load_image(image_file):
   """Load a single image file for inference."""
   image = tf.io.read_file(image_file)
@@ -102,7 +103,7 @@ def load_image(image_file):
   image = tf.cast(image, tf.float32)
   return image
     
-
+# generate output image
 def generate_images(model, test_input, tar=None):
   prediction = model(test_input, training=True)
   
@@ -125,7 +126,10 @@ def generate_images(model, test_input, tar=None):
     plt.axis('off')
   plt.show()
 
+  return prediction[0]
 
+
+# main inference function
 def inference_generation(image_path, checkpoint_dir):
   # 1. Initialize Generator
   generator = Generator()
@@ -169,16 +173,17 @@ def inference_generation(image_path, checkpoint_dir):
 
   # 4. Generate and Show Image
   print("Generating prediction...")
-  generate_images(generator, input_image, target_image)
+  prediction = generate_images(generator, input_image, target_image)
+  return input_image[0], target_image[0], prediction
 
 
 def main():
   # Define your paths here
-  image_path = 'dataset/facades/test/10.jpg'
+  image_path = 'dataset/facades/test/20.jpg'
   checkpoint_dir = './models'
 
   inference_generation(image_path, checkpoint_dir)
   
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
