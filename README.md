@@ -1,6 +1,6 @@
 # CONDITIONAL GAN - MODEL PIX2PIX
 
-* Architecture components
+### Architecture components
 
 - Generator => Encoder (downsampling) - Decoder (upsampling)
 
