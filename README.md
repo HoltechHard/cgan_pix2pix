@@ -19,6 +19,7 @@ $ python -m venv pix_env
 
 2) Activate python environment
 
+$ Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
 $ .\pix_env\Scripts\Activate.ps1
   
 3) Open the Google Colab repository and execute the jupyter notebook
