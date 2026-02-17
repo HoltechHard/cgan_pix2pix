@@ -16,7 +16,7 @@
 1) Create and activate python environment
 
 $ python -m venv pix_env  
-$ .\pix_env\Scripts\activate  
+$ .\pix_env\Scripts\Activate.ps1
   
 2) Open the Google Colab repository and execute the jupyter notebook
 
