@@ -27,5 +27,9 @@ https://colab.research.google.com/drive/1JQCU-R-YGYO_skb9nTT5R-s1bhnpfIwG#scroll
 4) Install the necessary python libraries  
 $ pip install -r requirements.txt  
 
-5) 
+5) Command to run the application
+
+$ streamlit run app.py  
+
+ 
 
